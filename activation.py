@@ -13,7 +13,7 @@ def relu(x):
 
 
 def leaky_relu(x, alpha=0.01):
-    return np.where(x > 0, x, alpha * x)
+    return np.where(x >= 0, x, alpha * x)  # Changed, so 0 is also considered
 
 
 def tanh(x):
