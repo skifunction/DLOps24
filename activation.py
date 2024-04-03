@@ -1,11 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-
-x = np.linespace(-5, 5, 100)
-
-
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
 
 
 def relu(x):
@@ -20,19 +13,16 @@ def tanh(x):
     return np.tanh(x)
 
 
-y_sig = sigmoid(x)
-y_relu = relu(x)
-y_l_relu = leaky_relu(x)
-y_tanh = tanh(x)
+random_values = [-4.5, -1.2, 0, 2.8, -4.1, 1.5, -0.7, 3.2, -2.4, 4.6]
 
-plt.figure(figsize=(10, 6))
-plt.plot(x, y_sigmoid, label="Sigmoid")
-plt.plot(x, y_relu, label="ReLU")
-plt.plot(x, y_leaky_relu, label="Leaky ReLU")
-plt.plot(x, y_tanh, label="Tanh")
-plt.xlabel("Input")
-plt.ylabel("Output")
-plt.title("Activation Functions")
-plt.legend()
-plt.grid(True)
-plt.show()
+print("ReLU:")
+for val in random_values:
+    print(relu(val))
+
+print("\nLeaky ReLU:")
+for val in random_values:
+    print(leaky_relu(val))
+
+print("\nTanh:")
+for val in random_values:
+    print(tanh(val))
